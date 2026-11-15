@@ -1,0 +1,330 @@
+/* =========================================================
+   CarbonTrack_TN – Feuille de style (sprint "Lancement du site web")
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   CTT-27 : couleurs et police choisies
+   Les variables CSS (--nom) permettent de changer une couleur
+   à un seul endroit pour tout le site.
+   --------------------------------------------------------- */
+:root {
+  --vert-fonce: #0b5d3b;
+  --vert: #1f9d62;
+  --vert-clair: #e8f6ee;
+  --texte: #1c2b24;
+  --gris: #5c6b64;
+  --blanc: #ffffff;
+  --rayon: 14px;
+  --ombre: 0 8px 24px rgba(11, 93, 59, 0.10);
+  --police: "Poppins", "Segoe UI", Arial, sans-serif;
+}
+
+/* ---------- Réglages de base ---------- */
+* {
+  box-sizing: border-box;   /* la largeur inclut les marges internes */
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;  /* défilement doux quand on clique sur le menu */
+  scroll-padding-top: 80px; /* évite que le menu cache le titre de la section */
+}
+
+body {
+  font-family: var(--police);
+  color: var(--texte);
+  line-height: 1.6;
+  background: var(--blanc);
+}
+
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+
+/* Conteneur centré : limite la largeur du contenu */
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ---------- Boutons ---------- */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: var(--vert);
+  color: var(--blanc);
+  border: 2px solid var(--vert);
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+.btn:hover { background: var(--vert-fonce); border-color: var(--vert-fonce); transform: translateY(-2px); }
+.btn-contour { background: transparent; color: var(--vert-fonce); }
+.btn-contour:hover { color: var(--blanc); }
+.btn-petit { padding: 8px 20px; font-size: 0.95rem; }
+
+/* =========================================================
+   CTT-3 : BARRE DE NAVIGATION (CTT-34)
+   ========================================================= */
+.header {
+  position: sticky;          /* reste visible en haut quand on défile */
+  top: 0;
+  z-index: 100;
+  background: var(--blanc);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+  position: relative;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--vert-fonce);
+}
+.logo-icone { color: var(--vert); }
+.logo-tn { color: var(--vert); }
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  font-weight: 500;
+}
+.menu a:not(.btn):hover { color: var(--vert); }
+
+/* Bouton burger : caché sur ordinateur */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: var(--vert-fonce);
+  cursor: pointer;
+}
+
+/* =========================================================
+   CTT-1 : PAGE D'ACCUEIL (CTT-28)
+   ========================================================= */
+.hero {
+  background: linear-gradient(135deg, var(--vert-clair) 0%, #ffffff 100%);
+  padding: 80px 0;
+}
+
+.hero-grille {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;  /* texte plus large que la carte */
+  gap: 48px;
+  align-items: center;
+}
+
+.badge {
+  display: inline-block;
+  background: var(--blanc);
+  color: var(--vert-fonce);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: var(--ombre);
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: 2.6rem;
+  line-height: 1.2;
+  color: var(--vert-fonce);
+  margin-bottom: 18px;
+}
+.souligne { color: var(--vert); }
+
+.hero-intro {
+  color: var(--gris);
+  font-size: 1.1rem;
+  margin-bottom: 28px;
+}
+
+.hero-boutons { display: flex; flex-wrap: wrap; gap: 14px; }
+
+/* Carte d'exemple à droite */
+.hero-carte {
+  background: var(--blanc);
+  border-radius: var(--rayon);
+  box-shadow: var(--ombre);
+  padding: 28px;
+}
+.carte-etiquette { color: var(--gris); font-size: 0.85rem; }
+.carte-valeur {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: var(--vert-fonce);
+  margin-bottom: 18px;
+}
+.carte-valeur small { font-size: 1rem; font-weight: 500; color: var(--gris); }
+
+.barre-ligne {
+  display: grid;
+  grid-template-columns: 100px 1fr 40px;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+}
+.barre { height: 10px; background: var(--vert-clair); border-radius: 999px; overflow: hidden; }
+.barre-remplie { height: 100%; background: var(--vert); border-radius: 999px; }
+
+/* =========================================================
+   Sections communes
+   ========================================================= */
+.section { padding: 80px 0; }
+.section-claire { background: var(--vert-clair); }
+
+.titre-section {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--vert-fonce);
+}
+.sous-titre-section {
+  text-align: center;
+  color: var(--gris);
+  margin: 8px 0 40px;
+}
+
+/* =========================================================
+   CTT-2 : SECTION FONCTIONNALITÉS (CTT-31)
+   ========================================================= */
+.cartes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);  /* 4 colonnes égales = cartes alignées */
+  gap: 24px;
+}
+
+.carte {
+  background: var(--blanc);
+  border: 1px solid #e3ede7;
+  border-radius: var(--rayon);
+  padding: 28px 22px;
+  box-shadow: var(--ombre);
+  transition: transform 0.2s;
+}
+.carte:hover { transform: translateY(-6px); }
+
+.carte-icone {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.7rem;
+  background: var(--vert-clair);
+  border-radius: 50%;
+  margin-bottom: 16px;
+}
+.carte h3 { font-size: 1.1rem; color: var(--vert-fonce); margin-bottom: 8px; }
+.carte p { color: var(--gris); font-size: 0.95rem; }
+
+/* =========================================================
+   CTT-4 : FORMULAIRE DE CONTACT
+   ========================================================= */
+.contact-conteneur { max-width: 640px; }
+
+.formulaire {
+  background: var(--blanc);
+  border-radius: var(--rayon);
+  box-shadow: var(--ombre);
+  padding: 32px;
+}
+
+.champ { margin-bottom: 18px; }
+.champ label { display: block; font-weight: 600; margin-bottom: 6px; }
+
+.champ input,
+.champ textarea {
+  width: 100%;
+  padding: 12px 14px;
+  font-family: inherit;
+  font-size: 1rem;
+  border: 2px solid #d5e3db;
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.champ input:focus,
+.champ textarea:focus { border-color: var(--vert); }
+
+/* Classe ajoutée par le JavaScript quand un champ est invalide */
+.champ .invalide { border-color: #d64545; }
+.erreur { display: block; min-height: 1.2em; margin-top: 4px; color: #d64545; font-size: 0.85rem; }
+
+.confirmation {
+  margin-top: 18px;
+  padding: 14px 16px;
+  background: var(--vert-clair);
+  color: var(--vert-fonce);
+  border-left: 4px solid var(--vert);
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+/* =========================================================
+   Pied de page
+   ========================================================= */
+.footer { background: var(--vert-fonce); color: var(--blanc); padding: 24px 0; font-size: 0.9rem; }
+.footer-contenu { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; }
+
+/* =========================================================
+   CTT-29 / CTT-32 / CTT-35 : AFFICHAGE MOBILE ET TABLETTE
+   @media = règles appliquées seulement si l'écran est assez étroit
+   ========================================================= */
+
+/* Tablette */
+@media (max-width: 900px) {
+  .hero-grille { grid-template-columns: 1fr; }
+  .cartes { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Téléphone */
+@media (max-width: 768px) {
+  .hero { padding: 50px 0; }
+  .hero h1 { font-size: 2rem; }
+  .section { padding: 56px 0; }
+
+  /* Le burger apparaît, le menu devient une liste déroulante */
+  .menu-toggle { display: block; }
+
+  .menu {
+    display: none;                 /* caché par défaut */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: var(--blanc);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.08);
+    padding: 8px 20px 16px;
+  }
+  .menu.ouvert { display: flex; }  /* classe ajoutée par le JavaScript */
+  .menu li { padding: 10px 0; }
+  .menu .btn { text-align: center; display: block; }
+}
+
+@media (max-width: 520px) {
+  .cartes { grid-template-columns: 1fr; }
+  .formulaire { padding: 22px; }
+  .barre-ligne { grid-template-columns: 90px 1fr 36px; }
+}
