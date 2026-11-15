@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <!-- Indispensable pour l'affichage mobile (CTT-29) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CarbonTrack_TN – Mesurez et réduisez votre empreinte carbone</title>
+  <meta name="description" content="CarbonTrack_TN est une plateforme web de comptabilité carbone qui aide les PME tunisiennes à mesurer, suivre et réduire leurs émissions.">
+
+  <!-- Police Poppins (CTT-27) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- =====================================================
+       CTT-3 : BARRE DE NAVIGATION (CTT-33, CTT-34)
+       ===================================================== -->
+  <header class="header">
+    <div class="container nav">
+
+      <!-- Logo (CTT-33 : placer le logo) -->
+      <a href="#accueil" class="logo" aria-label="CarbonTrack_TN – retour à l'accueil">
+        <svg class="logo-icone" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
+          <path d="M20 4C10 4 4 9 4 16c0 1.5.3 2.8.8 4 .9-5 4.4-9.200 9.200-11.500-3.800 3-6.500 6.800-7.600 11.700 1.200.5 2.500.8 3.600.8 7 0 11-6 10-17z" fill="currentColor"/>
+        </svg>
+        <span>CarbonTrack<span class="logo-tn">_TN</span></span>
+      </a>
+
+      <!-- Bouton burger : visible seulement sur mobile -->
+      <button class="menu-toggle" id="menu-toggle" type="button"
+              aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
+        ☰
+      </button>
+
+      <!-- Rubriques du menu (CTT-33 : choisir les rubriques) -->
+      <!-- Chaque lien pointe vers l'id d'une section (CTT-34 : relier chaque lien) -->
+      <ul class="menu" id="menu">
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#fonctionnalites">Fonctionnalités</a></li>
+        <li><a href="#contact" class="btn btn-petit">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- =====================================================
+         CTT-1 : PAGE D'ACCUEIL (CTT-27, CTT-28)
+         ===================================================== -->
+    <section class="hero" id="accueil">
+      <div class="container hero-grille">
+
+        <div class="hero-texte">
+          <p class="badge">🇹🇳 Startup tunisienne labellisée</p>
+          <h1>Mesurez votre empreinte carbone, <span class="souligne">réduisez-la pas à pas</span></h1>
+          <p class="hero-intro">
+            CarbonTrack_TN est une plateforme web de comptabilité carbone qui aide les PME
+            tunisiennes à mesurer leurs émissions et à passer à l'action grâce à des outils
+            simples et clairs.
+          </p>
+          <div class="hero-boutons">
+            <a href="#fonctionnalites" class="btn">Découvrir les fonctionnalités</a>
+            <a href="#contact" class="btn btn-contour">Nous contacter</a>
+          </div>
+        </div>
+
+        <!-- Carte d'illustration : les chiffres sont un EXEMPLE -->
+        <aside class="hero-carte" aria-label="Exemple de tableau de bord">
+          <p class="carte-etiquette">Exemple · empreinte mensuelle</p>
+          <p class="carte-valeur">2,4 <small>t CO₂e</small></p>
+
+          <div class="barre-ligne">
+            <span>Énergie</span>
+            <div class="barre"><div class="barre-remplie" style="width: 45%"></div></div>
+            <span>45 %</span>
+          </div>
+          <div class="barre-ligne">
+            <span>Déplacements</span>
+            <div class="barre"><div class="barre-remplie" style="width: 35%"></div></div>
+            <span>35 %</span>
+          </div>
+          <div class="barre-ligne">
+            <span>Déchets</span>
+            <div class="barre"><div class="barre-remplie" style="width: 20%"></div></div>
+            <span>20 %</span>
+          </div>
+        </aside>
+
+      </div>
+    </section>
+
+    <!-- =====================================================
+         CTT-2 : SECTION FONCTIONNALITÉS (CTT-30, CTT-31)
+         ===================================================== -->
+    <section class="section" id="fonctionnalites">
+      <div class="container">
+        <h2 class="titre-section">Nos fonctionnalités clés</h2>
+        <p class="sous-titre-section">Quatre outils pour passer de la mesure à l'action.</p>
+
+        <!-- 4 cartes (CTT-31 : créer les cartes en HTML) -->
+        <div class="cartes">
+
+          <article class="carte">
+            <div class="carte-icone" aria-hidden="true">🧮</div>
+            <h3>Calcul de l'empreinte</h3>
+            <p>Saisissez les consommations de votre PME (énergie, déplacements, déchets) et obtenez son empreinte carbone en quelques minutes.</p>
+          </article>
+
+          <article class="carte">
+            <div class="carte-icone" aria-hidden="true">📊</div>
+            <h3>Tableau de bord</h3>
+            <p>Suivez l'évolution des émissions de votre entreprise mois après mois avec des graphiques lisibles.</p>
+          </article>
+
+          <article class="carte">
+            <div class="carte-icone" aria-hidden="true">💡</div>
+            <h3>Conseils personnalisés</h3>
+            <p>Recevez des actions concrètes, adaptées à votre activité, pour réduire l'impact de votre PME.</p>
+          </article>
+
+          <article class="carte">
+            <div class="carte-icone" aria-hidden="true">🎯</div>
+            <h3>Objectifs et défis</h3>
+            <p>Fixez des objectifs de réduction pour votre entreprise et suivez vos progrès au fil du temps.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         CTT-4 : FORMULAIRE DE CONTACT (CTT-36, CTT-37)
+         ===================================================== -->
+    <section class="section section-claire" id="contact">
+      <div class="container contact-conteneur">
+        <h2 class="titre-section">Contactez notre équipe</h2>
+        <p class="sous-titre-section">Une question, une suggestion ? Écrivez-nous, nous répondons rapidement.</p>
+
+        <!-- novalidate : c'est notre JavaScript qui vérifie les champs -->
+        <form id="form-contact" class="formulaire" novalidate>
+
+          <!-- Champs définis en CTT-36 : nom, email, message -->
+          <div class="champ">
+            <label for="nom">Nom complet</label>
+            <input type="text" id="nom" name="nom" placeholder="Ex. : Amira Ben Salah" autocomplete="name">
+            <span class="erreur" id="erreur-nom" aria-live="polite"></span>
+          </div>
+
+          <div class="champ">
+            <label for="email">Adresse email</label>
+            <input type="email" id="email" name="email" placeholder="Ex. : amira@exemple.tn" autocomplete="email">
+            <span class="erreur" id="erreur-email" aria-live="polite"></span>
+          </div>
+
+          <div class="champ">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Écrivez votre message ici…"></textarea>
+            <span class="erreur" id="erreur-message" aria-live="polite"></span>
+          </div>
+
+          <button type="submit" class="btn">Envoyer le message</button>
+
+          <!-- Message de confirmation (CTT-36 puis CTT-37) -->
+          <p class="confirmation" id="confirmation" role="status" hidden></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-contenu">
+      <p>© 2026 CarbonTrack_TN – Tous droits réservés.</p>
+      <p>contact@carbotrack.tn</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
